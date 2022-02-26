@@ -1,10 +1,14 @@
-import './App.css';
+import React, { useState } from 'react';
 import Timer from './Timer';
 
 function App() {
-  return <div className="App">
-    <Timer />
-  </div>;
+  const [isToggled, setIsToggled] = useState(false);
+  return (
+    <div className="App">
+      <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
+      { isToggled && <Timer />}
+    </div>
+  )
 }
 
 export default App;
