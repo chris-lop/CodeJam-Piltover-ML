@@ -91,9 +91,13 @@ export default function Timer90Minutes() {
         <Container className="btnContainer">
         <Row className="rows">
             <Col className="columns"></Col>
+            <Col className="columns"></Col>
+            <Col className="columns"></Col>
             <Col><button onClick={pause} className="btns">Pause</button> </Col>
             <Col><button onClick={resume} className="btns">Resume</button></Col>
             <Col><button onClick={start} className="btns">{WorkOrBreak(!work)}!</button></Col>
+            <Col className="columns"></Col>
+            <Col className="columns"></Col>
             <Col className="columns"></Col> 
         </Row>
         </Container>
