@@ -1,8 +1,16 @@
-.App {
-    text-align: center;
+.Timer {
+    margin: auto;
 }
 
-.ToggleBtn {
+.ProgCircle {
+    margin: auto;
+}
+
+.btnContainer {
+    margin-top: 30px;
+}
+
+.btns {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -18,6 +26,6 @@
     font-weight: bold;
 }
 
-.ToggleBtn:hover {
+.btns:hover {
     background-color: #2b9dc0be;
 }

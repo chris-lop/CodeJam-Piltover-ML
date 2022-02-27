@@ -3,6 +3,9 @@
  import useCountDown from 'react-countdown-hook';
  import { CircularProgressbar } from 'react-circular-progressbar';
  import 'react-circular-progressbar/dist/styles.css';
+ import './Timer.css';
+ import { Container, Row, Col} from 'react-bootstrap';
+ import 'bootstrap/dist/css/bootstrap.min.css';
 
  var initialTime = 6 * 1000; // initial time in milliseconds, defaults to 60000
  const interval = 50; // interval to change remaining time amount, defaults to 1000
@@ -43,26 +46,19 @@
       
 
      return ( 
-         <>
-         <center>
-         <div style={{ width: 200, height: 200 }}>
-         <h1> <center>{WorkOrBreak(work)}
+        <div className="Timer">
+        <h1> {WorkOrBreak(work)} </h1> 
 
-<CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />
-     
-      <button onClick={pause}>
-        Pause
-      </button>
-      <button onClick={resume}>
-        Resume
-      </button>
-      <button onClick={start}>
-        {WorkOrBreak(!work)}!
-      </button>
-      </center></h1>
+        <div style={{width: 200, height: 200}} className="ProgCircle"><CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } /></div>
+        
+        <Container className="btnContainer">
+            <Row className="rows">
+                <Col className="columns"><button className="btns" onClick={pause}>Pause</button></Col>
+                <Col className="columns"><button className="btns" onClick={resume}>Resume</button></Col>
+                <Col className="columns"><button className="btns" onClick={start}>{WorkOrBreak(!work)}!</button></Col>
+            </Row>
+        </Container>
         </div>
-        </center>
-        </>
      )
      function timeToMinutes(time) {
       
