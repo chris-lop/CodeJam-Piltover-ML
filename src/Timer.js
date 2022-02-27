@@ -44,12 +44,11 @@
 
      return ( 
          <>
+         <center>
          <div style={{ width: 200, height: 200 }}>
          <h1> <center>{WorkOrBreak(work)}
 
-<div style={{ width: 200, height: 200 }}>
-<CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />;
-</div>
+<CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />
      
       <button onClick={pause}>
         Pause
@@ -62,6 +61,7 @@
       </button>
       </center></h1>
         </div>
+        </center>
         </>
      )
      function timeToMinutes(time) {
