@@ -1,5 +1,5 @@
 .Timer {
-    padding-top: 40px;
+    padding-top: 1%;
     margin: auto;
     width: 100%;
     height: 10%;
@@ -10,7 +10,7 @@
 }
 .ProgCircle {
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 1.5%;
     width: 38%;
     height: 38%;
 }
@@ -25,7 +25,7 @@
 .btns {
     border: none;
     color: white;
-    padding: 5% 10%;
+    padding: 1% 2%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
