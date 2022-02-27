@@ -1,0 +1,39 @@
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.hero-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
+    object-fit: contain;
+}
+
+h1 {
+    color: #fff;
+    font-size: 58px;
+}
+
+p {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn {
+    margin-top: 32px;
+    margin: 6px;
+    background-color: #fff;
+}
+
+.text-container {
+    margin-top: 400px;
+}

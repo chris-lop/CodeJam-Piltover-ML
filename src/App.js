@@ -5,10 +5,13 @@ import Timer90Minutes from './Timer90Minutes';
 import Timer5217rule from './Timer5217rule';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
+import HeroSection from './HeroSection';
 
 
 function App() {
   return (
+    <>
+    <HeroSection />
     <div className="App">
       <BrowserRouter>
       <Routes>
@@ -35,6 +38,8 @@ function App() {
     </BrowserRouter>
       
     </div>
+    </>
+    
   )
 }
 
