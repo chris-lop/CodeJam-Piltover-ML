@@ -3,56 +3,55 @@
  import useCountDown from 'react-countdown-hook';
 
  var initialTime = 6 * 1000; // initial time in milliseconds, defaults to 60000
- const interval = 1000; // interval to change remaining time amount, defaults to 1000
+ const interval = 50; // interval to change remaining time amount, defaults to 1000
 
  export default function Timer() {
 
     const [timeLeft, { start, pause, resume, reset }] = useCountDown(initialTime, interval);
     const [work, setWork] = useState(true);
-   // const isActive = timeLeft > 0;
 
-    // start the timer during the first render
-    React.useEffect(() => {
-      start();
-    }, []);
     
-    const restartWork = React.useCallback(() => {
-      // you can start existing timer with an arbitrary value
-      // if new value is not passed timer will start with initial value
-      if(work){
 
-      const newTime = 7 * 1000;
-        start(newTime);
-        setWork(false);}
-        else if (!work) {
-            const newTime = 2 * 1000;
-        
-        start(newTime);
-        setWork(true);
+    React.useEffect(() => {
+        if (timeLeft === 0) {
+            if(work){
+                setWork(false)
+            }
+            else {
+                setWork(true);
+            }
+            
         }
+      }, [timeLeft]);
+      React.useEffect(() => {
+        if (work) {
+            start(5000);
+            }
+            else {
+            start(3000);
+            }
+            
+        
+      }, [work]);
 
-    }, []);
    
-
+      
 
      return ( 
          <>
          <div>
-         <h1>{work.toString()}</h1>
-<p>Time left: {timeToMinutes(timeLeft)} : {timeToSeconds(timeLeft)}  </p>
+         <h1>{WorkOrBreak(work)} </h1>
 
-      <button onClick={restartWork}>
-        Work
-      </button>
-      <button onClick={restartWork}>
-        Break
-      </button>
+<p>Time left: {timeToMinutes(timeLeft)} : {timeToSeconds(timeLeft)} : {timeToMillis(timeLeft)} </p>
+    
+     
       <button onClick={pause}>
         Pause
       </button>
       <button onClick={resume}>
-        Resume
+        resume
       </button>
+
         </div>
         </>
      )
@@ -66,13 +65,26 @@
         return str
     }
      function timeToSeconds(time) {
-         if(time === 0) restartWork();
+       
         var sec = Math.floor(time/1000%60)
         if (sec<10) {
             var str = `0${sec} `
         }
         else str = sec
         return str;
+    }
+    function timeToMillis(time) {
+       
+        var mil = Math.floor(time/100%10)
+        
+        return mil
+    }
+
+    function WorkOrBreak(work){
+        if (work){
+            return "Work"
+        }
+        else return "Break"
     }
  }
 
