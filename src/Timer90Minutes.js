@@ -36,7 +36,10 @@ export default function Timer90Minutes() {
        
      }, [work]);
 
-  
+     function initTime(){
+        if(work) return 5400000
+        else return 900000
+    }
      
 
     return ( 
@@ -45,7 +48,7 @@ export default function Timer90Minutes() {
         <h1> <center>{WorkOrBreak(work)}
 
 <div style={{ width: 200, height: 200 }}>
-<CircularProgressbar value={timeLeft/1500000*100} text={ `${timeToHours(timeLeft)}: ${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)}`} />;
+<CircularProgressbar value={timeLeft} minValue={0} maxValue={initTime()} text={ `${timeToHours(timeLeft)}: ${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)}`} />;
 </div>
     
      <button onClick={pause}>
