@@ -36,7 +36,10 @@
         
       }, [work]);
 
-   
+    function initTime(){
+        if(work) return 1500000
+        else return 300000
+    }
       
 
      return ( 
@@ -45,7 +48,7 @@
          <h1> <center>{WorkOrBreak(work)}
 
 <div style={{ width: 200, height: 200 }}>
-<CircularProgressbar value={timeLeft/1500000*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />;
+<CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />;
 </div>
      
       <button onClick={pause}>
