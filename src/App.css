@@ -1,7 +1,32 @@
 .App {
     text-align: center;
 }
-
+.btns {
+    border: none;
+    color: white;
+    padding: 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vw;
+    margin: 1% 0.5%;
+    cursor: pointer;
+    background-color: #2b9dc0;
+    font-weight: bold;
+}
+.timerbtn{
+    border: none;
+    color: white;
+    padding: 7% 14%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vw;
+    margin: 1% 0.5%;
+    cursor: pointer;
+    background-color: #2b9dc0;
+    font-weight: bold;
+}
 .ToggleBtn {
     border: none;
     color: white;

@@ -3,31 +3,37 @@ import Timer from './Timer';
 import './App.css';
 import Timer90Minutes from './Timer90Minutes';
 import Timer5217rule from './Timer5217rule';
-import Carousel from 'react-bootstrap/Carousel';
-import { Container, Row, Col} from 'react-bootstrap';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
+
 
 function App() {
-  const [isToggled, setIsToggled] = useState(false);
   return (
     <div className="App">
-      <button className="ToggleBtn" onClick={() => setIsToggled(!isToggled)}>Start Now</button>
-      { isToggled && <Timer />}
-      { isToggled && <Timer90Minutes />}
-      { isToggled && <Timer5217rule />}
-
-      <Container>
-        <Carousel className="Carousel" interval="null">
-          <Carousel.Item>
-            <Timer />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Timer90Minutes />
-          </Carousel.Item>
-          <Carousel.Item>
-            <Timer5217rule />
-          </Carousel.Item>
-        </Carousel>
-      </Container>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+          <>
+          <Link to="Timer"><button className='btns' type="button">
+          Pomodoro
+     </button></Link>
+          <Link to="90"><button className='btns' type="button">
+          90 Minutes
+     </button></Link>
+          <Link to="5217"><button className='btns' type="button">
+          52-17 Minutes
+     </button></Link>
+      <Outlet />
+      </>
+        }>
+          <Route index element={<h1>Hello! Please select your timer</h1>} />
+          <Route path="Timer" element={<Timer />} />
+          <Route path="90" element={<Timer90Minutes />} />
+          <Route path="5217" element={<Timer5217rule />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+      
     </div>
   )
 }

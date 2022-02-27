@@ -18,6 +18,7 @@
     
 
     React.useEffect(() => {
+       
         if (timeLeft === 0) {
             if(work){
                 setWork(false)
@@ -48,7 +49,7 @@
      return ( 
         <div className="Timer">
 
-        <div style={{width: 200, height: 200}} className="ProgCircle">
+        <div className="ProgCircle">
             
         
             <CircularProgressbarWithChildren value={timeLeft/initTime()*100} 
@@ -97,9 +98,9 @@
         <Container className="btnContainer">
             <Row className="rows">
                 <Col className="columns"></Col>
-                <Col className="columns"><button className="btns" onClick={pause}>Pause</button></Col>
-                <Col className="columns"><button className="btns" onClick={resume}>Resume</button></Col>
-                <Col className="columns"><button className="btns" onClick={start}>{WorkOrBreak(!work)}!</button></Col>
+                <Col className="columns"><button className="timerbtn" onClick={pause}>Pause</button></Col>
+                <Col className="columns"><button className="timerbtn" onClick={resume}>Resume</button></Col>
+                <Col className="columns"><button className="timerbtn" onClick={start}>{WorkOrBreak(!work)}!</button></Col>
                 <Col className="columns"></Col>
             </Row>
         </Container>

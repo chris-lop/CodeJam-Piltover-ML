@@ -45,9 +45,9 @@ export default function Timer90Minutes() {
      
 
     return ( 
-        <div>
+        <div className="Timer">
 
-        <div style={{ width: 200, height: 200 }} className="ProgCircle">
+        <div className="ProgCircle">
         <CircularProgressbarWithChildren value={timeLeft/initTime()*100} 
         styles={{
     // Customize the root svg element
@@ -90,12 +90,12 @@ export default function Timer90Minutes() {
         </div>
         <Container className="btnContainer">
         <Row className="rows">
-            <Col className="columns"></Col>
-            <Col><button onClick={pause} className="btns">Pause</button> </Col>
-            <Col><button onClick={resume} className="btns">Resume</button></Col>
-            <Col><button onClick={start} className="btns">{WorkOrBreak(!work)}!</button></Col>
-            <Col className="columns"></Col> 
-        </Row>
+                <Col className="columns"></Col>
+                <Col className="columns"><button className="timerbtn" onClick={pause}>Pause</button></Col>
+                <Col className="columns"><button className="timerbtn" onClick={resume}>Resume</button></Col>
+                <Col className="columns"><button className="timerbtn" onClick={start}>{WorkOrBreak(!work)}!</button></Col>
+                <Col className="columns"></Col>
+            </Row>
         </Container>
         </div>
     )
