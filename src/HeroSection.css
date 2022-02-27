@@ -17,7 +17,7 @@ video {
 }
 
 h1 {
-    color: #ddd;
+    color: rgb(248, 240, 240);
     font-size: 58px;
 }
 
@@ -33,7 +33,9 @@ p {
     margin: 6px;
     background-color: #fff;
 }
-
+.btn:hover {
+    background-color: #5fabc2;
+}
 .text-container {
     margin-top: 400px;
 }

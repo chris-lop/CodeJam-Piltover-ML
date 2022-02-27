@@ -20,13 +20,13 @@ function App() {
         <Route path="/" element={
           <>
           <Link to="Timer"><button className='btns' type="button">
-          Pomodoro
+          Pomodoro🍅
      </button></Link>
           <Link to="90"><button className='btns' type="button">
-          Focus Blocks
+          Focus Blocks🕐
      </button></Link>
           <Link to="5217"><button className='btns' type="button">
-          52-17 Rule
+          52-17 Rule📏
      </button></Link>
       <Outlet />
       </>

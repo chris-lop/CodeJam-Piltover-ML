@@ -21,7 +21,7 @@
        
         if (timeLeft === 0) {
             if(work){
-                setWork(false)
+                setWork(false);
             }
             else {
                 setWork(true);
@@ -126,7 +126,7 @@
 
     function WorkOrBreak(work){
         if (work){
-            return "Work"
+            return "Study"
         }
         else return "Break"
     }

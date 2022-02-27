@@ -118,7 +118,7 @@ export default function Timer5217rule() {
 
    function WorkOrBreak(work){
        if (work){
-           return "Work"
+           return "Study"
        }
        else return "Break"
    }

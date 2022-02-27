@@ -119,7 +119,7 @@ export default function Timer90Minutes() {
 
    function WorkOrBreak(work){
        if (work){
-           return "Work"
+           return "Study"
        }
        else return "Break"
    }
