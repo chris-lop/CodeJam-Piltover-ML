@@ -31,7 +31,11 @@ function App() {
       <Outlet />
       </>
         }>
-          <Route index element={<h1>Hello! Please select your timer</h1>} />
+          <Route index element={<div>
+          <h1 className="selectionApp">Let's study.</h1>
+        <p1 className="selectionDescription">Start by choosing a timer</p1>
+        </div>
+        } />
           <Route path="Timer" element={<Timer />} />
           <Route path="90" element={<Timer90Minutes />} />
           <Route path="5217" element={<Timer5217rule />} />

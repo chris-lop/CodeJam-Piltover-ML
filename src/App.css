@@ -1,10 +1,17 @@
 .App {
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.863);
     height: 100vh;
     
 }
+.selectionApp{
+    color:#2b94b4
 
+}
+.selectionDescription{
+    color:#2b94b4;
+    font-size: 300%;
+}
 .btns {
     border: none;
     color: white;
