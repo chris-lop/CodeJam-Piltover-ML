@@ -5,22 +5,22 @@
     height: 10%;
 }
 .Time {
-      font-size: 5.5vw;
+      font-size: 5.0vw;
     margin-bottom: 0px;
 }
 .ProgCircle {
     margin: auto;
     margin-bottom: 1.5%;
-    width: 38%;
-    height: 38%;
+    width: 31%;
+    height: 31%;
 }
 
 .btnContainer {
-    margin-top: 0px;
+    margin-top: auto;
     
 }
 .rows {
-    margin: 0px;
+    margin: auto;
 }
 .btns {
     border: none;
