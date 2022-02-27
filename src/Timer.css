@@ -1,15 +1,21 @@
 .Timer {
     margin: auto;
 }
-
+.Time {
+      font-size: 32px;
+    margin-bottom: 15px;
+}
 .ProgCircle {
     margin: auto;
 }
 
 .btnContainer {
-    margin-top: 30px;
+    margin-top: 0px;
+    
 }
-
+.rows {
+    margin: 0px;
+}
 .btns {
     border: none;
     color: white;

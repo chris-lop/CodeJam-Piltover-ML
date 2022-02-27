@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 import useCountDown from 'react-countdown-hook';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbar, CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,10 +46,47 @@ export default function Timer90Minutes() {
 
     return ( 
         <div>
-        <h1>{WorkOrBreak(work)}</h1>
 
         <div style={{ width: 200, height: 200 }} className="ProgCircle">
-        <CircularProgressbar value={timeLeft} minValue={0} maxValue={initTime()} text={ `${timeToHours(timeLeft)}: ${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)}`} />;
+        <CircularProgressbarWithChildren value={timeLeft/initTime()*100} 
+        styles={{
+    // Customize the root svg element
+    root: {},
+    // Customize the path, i.e. the "completed progress"
+    path: {
+      // Path color
+      stroke: `rgba(${255-timeLeft/initTime()*255}, 152, 199, 1)`,
+      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+      strokeLinecap: 'butt',
+      // Customize transition animation
+      transition: 'stroke-dashoffset 0.3s ease 0s',
+      // Rotate the path
+      transform: 'rotate(0)',
+      transformOrigin: 'center center',
+    },
+    // Customize the circle behind the path, i.e. the "total progress"
+    trail: {
+      // Trail color
+      stroke: '#EEEEEE',
+      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+      strokeLinecap: 'butt',
+      // Rotate the trail
+      transform: 'rotate(0)',
+      transformOrigin: 'center center',
+    },
+    // Customize the text
+    text: {
+      // Text color
+      fill: '#255',
+      // Text size
+      fontSize: '16px',
+    },
+    // Customize background - only used when the `background` prop is true
+    background: {
+      fill: '#3e98c7',
+     }}} > <div className="Time"><table><tr>
+        <b>{WorkOrBreak(work)}</b></tr>
+         <tr>{timeToHours(timeLeft)} : {timeToMinutes(timeLeft)} : {timeToSeconds(timeLeft)}</tr></table></div> </CircularProgressbarWithChildren>
         </div>
         <Container className="btnContainer">
         <Row className="rows">

@@ -1,7 +1,7 @@
  import React, {useEffect, useState} from "react";
 
  import useCountDown from 'react-countdown-hook';
- import { CircularProgressbar } from 'react-circular-progressbar';
+ import { CircularProgressbar, CircularProgressbarWithChildren  } from 'react-circular-progressbar';
  import 'react-circular-progressbar/dist/styles.css';
  import './Timer.css';
  import { Container, Row, Col} from 'react-bootstrap';
@@ -30,26 +30,69 @@
       }, [timeLeft]);
       React.useEffect(() => {
         if (work) {
-            start(1500000);
+            start(15000);
             }
             else {
-            start(300000);
+            start(3000);
             }
             
         
       }, [work]);
 
     function initTime(){
-        if(work) return 1500000
-        else return 300000
+        if(work) return 15000
+        else return 3000
     }
       
 
      return ( 
         <div className="Timer">
-        <h1> {WorkOrBreak(work)} </h1> 
 
-        <div style={{width: 200, height: 200}} className="ProgCircle"><CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } /></div>
+        <div style={{width: 200, height: 200}} className="ProgCircle">
+            
+        
+            <CircularProgressbarWithChildren value={timeLeft/initTime()*100} 
+        styles={{
+    // Customize the root svg element
+    root: {},
+    // Customize the path, i.e. the "completed progress"
+    path: {
+      // Path color
+      stroke: `rgba(${255-timeLeft/initTime()*255}, 152, 199, 1)`,
+      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+      strokeLinecap: 'butt',
+      // Customize transition animation
+      transition: 'stroke-dashoffset 0.3s ease 0s',
+      // Rotate the path
+      transform: 'rotate(0)',
+      transformOrigin: 'center center',
+    },
+    // Customize the circle behind the path, i.e. the "total progress"
+    trail: {
+      // Trail color
+      stroke: '#EEEEEE',
+      // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+      strokeLinecap: 'butt',
+      // Rotate the trail
+      transform: 'rotate(0)',
+      transformOrigin: 'center center',
+    },
+    // Customize the text
+    text: {
+      // Text color
+      fill: '#255',
+      // Text size
+      fontSize: '16px',
+    },
+    // Customize background - only used when the `background` prop is true
+    background: {
+      fill: '#3e98c7',
+     }}} > <div className="Time"><table><tr>
+        <b>{WorkOrBreak(work)}</b></tr>
+         <tr>{timeToMinutes(timeLeft)} : {timeToSeconds(timeLeft)} : {timeToMillis(timeLeft)}</tr></table></div> </CircularProgressbarWithChildren>
+
+    
+    </div>
         
         <Container className="btnContainer">
             <Row className="rows">
