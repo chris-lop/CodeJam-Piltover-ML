@@ -23,10 +23,10 @@ function App() {
           Pomodoro
      </button></Link>
           <Link to="90"><button className='btns' type="button">
-          90 Minutes
+          Focus Blocks
      </button></Link>
           <Link to="5217"><button className='btns' type="button">
-          52-17 Minutes
+          52-17 Rule
      </button></Link>
       <Outlet />
       </>

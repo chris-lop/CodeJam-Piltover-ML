@@ -25,10 +25,10 @@
             }
             else {
                 setWork(true);
-            }
-            
+            }      
         }
       }, [timeLeft]);
+
       React.useEffect(() => {
         if (work) {
             start(15000);
@@ -50,7 +50,7 @@
         <div className="Timer">
         <div className="ProgCircle">
         
-        <CircularProgressbarWithChildren value={timeLeft/initTime()*100}>   
+        <CircularProgressbarWithChildren className="ProgBar" value={timeLeft/initTime()*100}>   
         <div className="Time">
             <table>
                 <tr>
