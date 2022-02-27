@@ -50,7 +50,31 @@
         <div className="Timer">
         <div className="ProgCircle">
         
-        <CircularProgressbarWithChildren className="ProgBar" value={timeLeft/initTime()*100}>   
+        <CircularProgressbarWithChildren value={timeLeft/initTime()*100 }
+        styles={{
+            // Customize the root svg element
+            root: {},
+            // Customize the path, i.e. the "completed progress"
+            path: {
+              // Path color
+              stroke: `rgba(43, ${255-99+(50*(1-timeLeft/initTime()))}, 192, 1)`,
+              // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+              strokeLinecap: 'butt',
+              // Customize transition animation
+              transition: 'stroke-dashoffset 0.3s ease 0s',
+            },
+            // Customize the circle behind the path, i.e. the "total progress"
+            trail: {
+              // Trail color
+              stroke: '#D3D3D3',
+              // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+              strokeLinecap: 'butt',
+            },
+        }
+        
+        
+        
+        }>   
         <div className="Time">
             <table>
                 <tr>
