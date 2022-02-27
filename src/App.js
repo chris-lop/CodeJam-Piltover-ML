@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Timer from './Timer';
 
+
 function App() {
   const [isToggled, setIsToggled] = useState(false);
   return (

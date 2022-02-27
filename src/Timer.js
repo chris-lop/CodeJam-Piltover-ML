@@ -1,6 +1,8 @@
  import React, {useEffect, useState} from "react";
 
  import useCountDown from 'react-countdown-hook';
+ import { CircularProgressbar } from 'react-circular-progressbar';
+ import 'react-circular-progressbar/dist/styles.css';
 
  var initialTime = 6 * 1000; // initial time in milliseconds, defaults to 60000
  const interval = 50; // interval to change remaining time amount, defaults to 1000
@@ -8,7 +10,7 @@
  export default function Timer() {
 
     const [timeLeft, { start, pause, resume, reset }] = useCountDown(initialTime, interval);
-    const [work, setWork] = useState(true);
+    const [work, setWork] = useState(false);
 
     
 
@@ -25,10 +27,10 @@
       }, [timeLeft]);
       React.useEffect(() => {
         if (work) {
-            start(5000);
+            start(1500000);
             }
             else {
-            start(3000);
+            start(300000);
             }
             
         
@@ -40,18 +42,22 @@
      return ( 
          <>
          <div>
-         <h1>{WorkOrBreak(work)} </h1>
+         <h1> <center>{WorkOrBreak(work)}
 
-<p>Time left: {timeToMinutes(timeLeft)} : {timeToSeconds(timeLeft)} : {timeToMillis(timeLeft)} </p>
-    
+<div style={{ width: 200, height: 200 }}>
+<CircularProgressbar value={timeLeft/1500000*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />;
+</div>
      
       <button onClick={pause}>
         Pause
       </button>
       <button onClick={resume}>
-        resume
+        Resume
       </button>
-
+      <button onClick={start}>
+        {WorkOrBreak(!work)}!
+      </button>
+      </center></h1>
         </div>
         </>
      )
