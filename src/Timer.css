@@ -17,7 +17,7 @@
 .rows {
     margin: auto;
 }
-.btns {
+.timerbtn {
     border: none;
     color: white;
     padding: 1% 2%;
@@ -29,8 +29,9 @@
     cursor: pointer;
     background-color: #2b9dc0;
     font-weight: bold;
+    border-radius: 12px
 }
 
-.btns:hover {
+.timerbtn:hover {
     background-color: #2b9dc0be;
 }

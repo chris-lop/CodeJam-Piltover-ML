@@ -11,14 +11,14 @@ function HeroSection() {
         <video src="/videos/study.mp4" autoPlay loop muted />
         <Container className="text-container"> 
             <Row>
-                <Col lg={6}><h1>Study Timer</h1></Col>
+                <Col lg={6}><h1>Study Time</h1></Col>
             </Row>
             <Row>
-                <Col lg={6}><p>Struggling with school?</p></Col>
+                <Col lg={6}><p>Struggling with your studies?</p></Col>
             </Row>
             <Row>
-                <Col lg={6}><p>What are you waiting for?</p></Col>
-            </Row>
+                <Col lg={6}><p>Let us handle your time.</p></Col>
+            </Row>  
             <Row>
                 <Col lg={6}><button className="btn" onClick={scrollToApp}>Get Started</button>
                 </Col>

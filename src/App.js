@@ -6,6 +6,8 @@ import Timer5217rule from './Timer5217rule';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Outlet, Link } from "react-router-dom";
 import HeroSection from './HeroSection';
+import { Container, Row, Col} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -36,10 +38,8 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-      
     </div>
     </>
-    
   )
 }
 

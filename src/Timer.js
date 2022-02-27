@@ -48,8 +48,6 @@
 
      return ( 
         <div className="Timer">
-
-        
         <div className="ProgCircle">
         
         <CircularProgressbarWithChildren value={timeLeft/initTime()*100}>   
