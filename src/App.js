@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Timer from './Timer';
+import './App.css';
 
 
 function App() {
   const [isToggled, setIsToggled] = useState(false);
   return (
     <div className="App">
-      <button onClick={() => setIsToggled(!isToggled)}>Toggle</button>
+      <button className="ToggleBtn" onClick={() => setIsToggled(!isToggled)}>Start Now</button>
       { isToggled && <Timer />}
     </div>
   )
