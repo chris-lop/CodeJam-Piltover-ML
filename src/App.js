@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <button className="ToggleBtn" onClick={() => setIsToggled(!isToggled)}>Start Now</button>
       { isToggled && <Timer />}
-      <Timer90Minutes />
-      <Timer5217rule />
+      { isToggled && <Timer90Minutes />}
+      { isToggled && <Timer5217rule />}
     </div>
   )
 }
