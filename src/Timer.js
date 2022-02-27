@@ -41,7 +41,7 @@
 
      return ( 
          <>
-         <div>
+         <div style={{ width: 200, height: 200 }}>
          <h1> <center>{WorkOrBreak(work)}
 
 <div style={{ width: 200, height: 200 }}>
