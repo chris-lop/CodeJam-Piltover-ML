@@ -102,6 +102,8 @@
                 <Col className="columns"><button className="timerbtn" onClick={resume}>Resume</button></Col>
                 <Col className="columns"><button className="timerbtn" onClick={start}>{WorkOrBreak(!work)}!</button></Col>
                 <Col className="columns"></Col>
+                <Col className="columns"></Col>
+                <Col className="columns"></Col>
             </Row>
         </Container>
         </div>
