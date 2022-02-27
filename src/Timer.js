@@ -53,14 +53,16 @@
         
         <Container className="btnContainer">
             <Row className="rows">
+                <Col className="columns"></Col>
                 <Col className="columns"><button className="btns" onClick={pause}>Pause</button></Col>
                 <Col className="columns"><button className="btns" onClick={resume}>Resume</button></Col>
                 <Col className="columns"><button className="btns" onClick={start}>{WorkOrBreak(!work)}!</button></Col>
+                <Col className="columns"></Col>
             </Row>
         </Container>
         </div>
      )
-     
+
      function timeToMinutes(time) {
         var min = Math.floor((time/1000%3600)/60)
         if (min<10) {
