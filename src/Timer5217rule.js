@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 var initialTime = 6 * 1000; // initial time in milliseconds, defaults to 60000
 const interval = 50; // interval to change remaining time amount, defaults to 1000
 
-export default function Timer() {
+export default function Timer5217rule() {
 
    const [timeLeft, { start, pause, resume, reset }] = useCountDown(initialTime, interval);
    const [work, setWork] = useState(false);
@@ -49,7 +49,7 @@ export default function Timer() {
        <div className="Timer">
        <h1> {WorkOrBreak(work)} </h1> 
 
-       <div style={{width: 200, height: 200}} className="ProgCircle"><CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToHours(timeLeft)}: ${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } /></div>
+       <div style={{width: 200, height: 200}} className="ProgCircle"><CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToHours(timeLeft)}: ${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)}` } /></div>
        
        <Container className="btnContainer">
            <Row className="rows">
