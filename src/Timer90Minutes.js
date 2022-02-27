@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css';
 var initialTime = 6 * 1000; // initial time in milliseconds, defaults to 60000
 const interval = 50; // interval to change remaining time amount, defaults to 1000
 
-export default function Timer() {
+export default function Timer90Minutes() {
 
    const [timeLeft, { start, pause, resume, reset }] = useCountDown(initialTime, interval);
    const [work, setWork] = useState(false);
@@ -27,16 +27,19 @@ export default function Timer() {
      }, [timeLeft]);
      React.useEffect(() => {
        if (work) {
-           start(1500000);
+           start(5400000);
            }
            else {
-           start(300000);
+           start(900000);
            }
            
        
      }, [work]);
 
-  
+     function initTime(){
+        if(work) return 5400000
+        else return 900000
+    }
      
 
     return ( 
@@ -45,7 +48,7 @@ export default function Timer() {
         <h1> <center>{WorkOrBreak(work)}
 
 <div style={{ width: 200, height: 200 }}>
-<CircularProgressbar value={timeLeft/1500000*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />;
+<CircularProgressbar value={timeLeft} minValue={0} maxValue={initTime()} text={ `${timeToHours(timeLeft)}: ${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)}`} />;
 </div>
     
      <button onClick={pause}>
@@ -61,10 +64,18 @@ export default function Timer() {
        </div>
        </>
     )
-    
+    function timeToHours(time){
+        
+        var hours = Math.floor((time/1000) / 3600)
+        if (hours<10){
+            var str = `0${hours} `
+        }
+        else str = hours
+        return str
+    }
     function timeToMinutes(time) {
      
-       var min = Math.floor((time/1000%3600)/60)
+       var min = Math.floor(((time/1000)%3600)/60)
        if (min<10) {
            var str = `0${min} `
        }
@@ -73,19 +84,19 @@ export default function Timer() {
    }
     function timeToSeconds(time) {
       
-       var sec = Math.floor(time/1000%60)
+       var sec = Math.floor((time/1000)%60)
        if (sec<10) {
            var str = `0${sec} `
        }
        else str = sec
        return str;
    }
-   function timeToMillis(time) {
+//    function timeToMillis(time) {
       
-       var mil = Math.floor(time/100%10)
+//        var mil = Math.floor(time/100%10)
        
-       return mil
-   }
+//        return mil
+//    }
 
    function WorkOrBreak(work){
        if (work){

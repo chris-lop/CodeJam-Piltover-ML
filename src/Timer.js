@@ -60,8 +60,8 @@
         </Container>
         </div>
      )
+     
      function timeToMinutes(time) {
-      
         var min = Math.floor((time/1000%3600)/60)
         if (min<10) {
             var str = `0${min} `
