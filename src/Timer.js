@@ -31,18 +31,18 @@
       }, [timeLeft]);
       React.useEffect(() => {
         if (work) {
-            start(15000);
+            start(1500000);
             }
             else {
-            start(3000);
+            start(300000);
             }
             
         
       }, [work]);
 
     function initTime(){
-        if(work) return 15000
-        else return 3000
+        if(work) return 1500000
+        else return 300000
     }
       
 
