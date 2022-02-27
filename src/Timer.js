@@ -48,7 +48,7 @@
          <div style={{ width: 200, height: 200 }}>
          <h1> <center>{WorkOrBreak(work)}
 
-<CircularProgressbar value={timeLeft/initTime*100} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />
+<CircularProgressbar value={timeLeft} minValue={0} maxValue={initTime()} text={ `${timeToMinutes(timeLeft)} : ${timeToSeconds(timeLeft)} : ${timeToMillis(timeLeft)}` } />
      
       <button onClick={pause}>
         Pause
@@ -65,7 +65,6 @@
         </>
      )
      function timeToMinutes(time) {
-      
         var min = Math.floor((time/1000%3600)/60)
         if (min<10) {
             var str = `0${min} `
